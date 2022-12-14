@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   private _registerUrl = "http://localhost:9001";
-  private _loginUrl = "http://localhost:9001/token";
+  private _loginUrl = "http://localhost:8080/token";
 
   constructor(private http: HttpClient) { }
 
