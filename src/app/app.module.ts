@@ -18,6 +18,11 @@ import { HomeComponent } from './stocks/home/home.component';
 import { AddEmployeeComponent } from './stocks/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './stocks/edit-employee/edit-employee.component';
 import { ViewEmployeeComponent } from './stocks/view-employee/view-employee.component';
+import { UserNavComponent } from './navbar-user/user-nav/user-nav.component';
+import { UserHomeComponent } from './User-home/user-home/user-home.component';
+import { BillingComponent } from './billing/billing.component';
+import { AddProductToBillComponent } from './add-product-to-bill/add-product-to-bill.component';
+// import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -35,7 +40,11 @@ import { ViewEmployeeComponent } from './stocks/view-employee/view-employee.comp
     ProductHomeComponent,
     AddProductComponent,
     EditProductComponent,
-    ViewProductComponent
+    ViewProductComponent,
+    UserNavComponent,
+    UserHomeComponent,
+    BillingComponent,
+    AddProductToBillComponent
   ],
   imports: [
     BrowserModule,

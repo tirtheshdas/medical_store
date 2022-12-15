@@ -10,6 +10,12 @@ import { ProductHomeComponent } from './Products/home/home.component';
 import { AddProductComponent } from './Products/add-products/add-product.component';
 import { EditProductComponent } from './Products/edit-products/edit-product.component';
 import { ViewProductComponent } from './Products/view-product/view-product.component';
+import { UserNavComponent } from './navbar-user/user-nav/user-nav.component'
+import { UserHomeComponent } from './User-home/user-home/user-home.component';
+import { BillingComponent } from './billing/billing.component';
+import { AddProductToBillComponent } from './add-product-to-bill/add-product-to-bill.component'
+
+
 
 // import { RegisterComponent } from './register/register.component';
 
@@ -26,6 +32,10 @@ const routes: Routes = [
     {path:'productadd',  component: AddProductComponent},
     {path:'productedit/:id',  component: EditProductComponent},
     {path:'productview/:id',  component: ViewProductComponent},
+    {path: ':id/employee' , component: UserNavComponent },
+    {path:'employee/homepage', component:UserHomeComponent},
+    {path:'billing', component:BillingComponent},
+    {path:'billing/addprodtobill', component:  AddProductToBillComponent }
 
 
 ];
