@@ -1,4 +1,4 @@
-<!-- <div class="container">
+<!-- <!-- <div class="container">
     <h2 class="py-4"></h2>
    -->
     <!-- <div class="form-group mb-4">
@@ -88,9 +88,9 @@
               <td>{{ product.productBatchNo }}</td>
               <td>{{ product.ProductExpiryDate }}</td>
               <td>
-                <a href="#" [routerLink]="['/productview/', product.productId]" class="btn"><i class='fas fa-eye view'></i></a>
-                <a href="#" [routerLink]="['/productedit/', product.productId]" class="btn">edit<i class="fa fa-edit edit"></i></a>
-                <!-- <button type="button" (click)="deleteProductConfirmation(product)" class="btn">delete<i class='fas fa-trash-alt delete'></i></button> -->
+                <!-- <a href="#" class="btn" (click)="addProdToList(product)">Add<i class='fas fa-eye view'></i></a> -->
+                <!-- <a href="#" [routerLink]="['/productedit/', product.productId]" class="btn">edit<i class="fa fa-edit edit"></i></a> -->
+                <button type="button" (click)="addProdToList(product)" class="btn">Add<i class='fas fa-trash-alt delete'></i></button>
               </td>
             </tr>
             <tr>
@@ -100,4 +100,5 @@
         </table>
       </div>
     </div>
-  </div>
+    <button (click)="submit()">Submit</button>
+  </div> 

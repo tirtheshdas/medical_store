@@ -14,6 +14,7 @@ import { UserNavComponent } from './navbar-user/user-nav/user-nav.component'
 import { UserHomeComponent } from './User-home/user-home/user-home.component';
 import { BillingComponent } from './billing/billing.component';
 import { AddProductToBillComponent } from './add-product-to-bill/add-product-to-bill.component'
+import { DisplayBillComponent } from './display-bill/display-bill.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
     {path: ':id/employee' , component: UserNavComponent },
     {path:'employee/homepage', component:UserHomeComponent},
     {path:'billing', component:BillingComponent},
-    {path:'billing/addprodtobill', component:  AddProductToBillComponent }
+    {path:'billing/:id/addprodtobill', component:  AddProductToBillComponent },
+    {path:'billing/:id/invoice', component:DisplayBillComponent}
 
 
 ];

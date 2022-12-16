@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {BillingComponent} from '../billing/billing.component'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgbTypeaheadWindow } from '@ng-bootstrap/ng-bootstrap/typeahead/typeahead-window';
+import { ActivatedRoute, Router } from '@angular/router';
+
 interface Product {
         productName: string,
         productDescription: string,
@@ -20,17 +22,19 @@ interface Product {
 })
 export class AddProductToBillComponent {
 
-  
-  
+  public href: string = "";
   productList: any = [];
   searchText: string = "";
   url = "http://localhost:8080/user/getAllProducts";
-  constructor( private http: HttpClient ) { }
 
+  constructor( private http: HttpClient, private route: ActivatedRoute, private router: Router ) { }
   Token: string = `Bearer ${localStorage.getItem("token")}`
+
+  
   ngOnInit(): void {
     this.getUser();
   }
+  
   async getUser(){
     let headers = new HttpHeaders({
       'Authorization': this.Token,
@@ -40,12 +44,33 @@ export class AddProductToBillComponent {
     console.log(this.productList)
   }
 
+  addProdToList(product:any){
+    let headers = new HttpHeaders({
+      'Authorization': this.Token,
+      'Content-Type': 'application/json'
+    });
+    console.log(product.productId)
+    this.href = this.router.url
+    const myArray = this.href.split("/");
+    console.log(myArray)
+    const url = `http://localhost:8080/user/addProductToBill?billId=${myArray[2]}&productId=${product.productId}&productQuantity=1`
+    console.log(url)
+    let user = {}
+    this.http.post<any>(url,user ,{headers:headers}).subscribe((res)=> console.log(res))
+
+  }
+
+  submit(){
+    this.href = this.router.url
+    const myArray = this.href.split("/");
+    let url = `billing/${myArray[2]}/invoice`
+    console.log(url)
+    this.router.navigate([url])
+      
+  }
+
   product1 :Product[]=this.productList
   filteredCars: Product[] = [];
-
-  addProdToBill(){
-    console.log()
-  }
 
   applyFilter(filterValue: string) {
     // filterValue = filterValue.trim(); // Remove whitespace

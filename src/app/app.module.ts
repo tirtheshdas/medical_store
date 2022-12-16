@@ -22,6 +22,7 @@ import { UserNavComponent } from './navbar-user/user-nav/user-nav.component';
 import { UserHomeComponent } from './User-home/user-home/user-home.component';
 import { BillingComponent } from './billing/billing.component';
 import { AddProductToBillComponent } from './add-product-to-bill/add-product-to-bill.component';
+import { DisplayBillComponent } from './display-bill/display-bill.component';
 // import { FilterPipe } from './filter.pipe';
 
 
@@ -44,7 +45,8 @@ import { AddProductToBillComponent } from './add-product-to-bill/add-product-to-
     UserNavComponent,
     UserHomeComponent,
     BillingComponent,
-    AddProductToBillComponent
+    AddProductToBillComponent,
+    DisplayBillComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,8 @@ export class BillingComponent {
     address:"",
     totalAmount: 0
   }
-
+ 
+  data: any = {};
   
   constructor(private userData: ServiceService,  private http: HttpClient, private _router:Router ) { }
 
@@ -37,8 +38,10 @@ export class BillingComponent {
     });
     this.http.post(this.url, this.billUserData, {headers:headers}).subscribe((res)=>{
       console.log(res)
-      // temp = res;
-      this._router.navigate(['billing/addprodtobill'])
+       this.data = res;
+      let url = `billing/${this.data.billId}/addprodtobill`
+      console.log(url)
+      this._router.navigate([url])
     }
     // err =>{console.log(err.message)}
     )
